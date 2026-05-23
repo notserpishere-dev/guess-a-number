@@ -77,7 +77,7 @@ while (playAgain)
     }
     Console.WriteLine("Are playing again? (y/n)");
     String answer = Console.ReadLine();
-    switch (odpowiedz)
+    switch (answer)
     {
         case "y":
             continue;
