@@ -1,16 +1,51 @@
 Random random = new Random();
-bool playAgain = true;
-int min = 1;
-int max = 100;
+bool playAgain = false; 
 int guess;
 int number;
 int guesses;
+int min = 1;
+int max = 100;
+
+void menu()
+{
+    // ik I could do that in one WriteLine by using \n but I like this more
+    Console.WriteLine("Guess the number by notserpishere!");
+    Console.WriteLine("Current Settings: Min: " + min + ", Max: " + max + ")");
+    Console.WriteLine("Menu:");
+    Console.WriteLine("1. Start new game");
+    Console.WriteLine("2. Settings (change numbers min and max)");
+    Console.WriteLine("3. Exit");
+    int input = Convert.ToInt32(Console.ReadLine());
+    if (input == 1)
+    {
+        playAgain = true;
+    }
+    else if (input == 2)
+    {
+        Console.Write("Set min number (current: " + min + ") ");
+        min = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Set max number (current: " + max + ") ");
+        max = Convert.ToInt32(Console.ReadLine());
+        menu();
+    }
+    else if (input == 3)
+    {
+        Console.Write("Bye!");
+        playAgain = false;
+    }
+    else
+    {
+        Console.Write("Invalid option");
+        menu();
+    }
+}
+menu();
 
 while (playAgain)
 {
     guess = 0;
     guesses = 0;
-    number = random.Next(min, max + 1);
+    number = random.Next(min, max + 1); // idk C# is weird here that I need to add 1
 
     while(guess != number)
     {
@@ -47,7 +82,7 @@ while (playAgain)
         case "y":
             continue;
         case "n":
-            Console.WriteLine("Bye bye!");
+            menu();
             playAgain = false;
             break;
         default:
@@ -58,5 +93,4 @@ while (playAgain)
     }
 
 }
-
 Console.ReadKey();
