@@ -10,7 +10,7 @@ void menu()
 {
     // ik I could do that in one WriteLine by using \n but I like this more
     Console.WriteLine("Guess the number by notserpishere!");
-    Console.WriteLine("Current Settings: Min: " + min + ", Max: " + max + ")");
+    Console.WriteLine("Current Settings: Min: " + min + ", Max: " + max);
     Console.WriteLine("Menu:");
     Console.WriteLine("1. Start new game");
     Console.WriteLine("2. Settings (change numbers min and max)");
