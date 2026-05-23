@@ -76,7 +76,7 @@ while (playAgain)
         }
     }
     Console.WriteLine("Are playing again? (y/n)");
-    String odpowiedz = Console.ReadLine();
+    String answer = Console.ReadLine();
     switch (odpowiedz)
     {
         case "y":
@@ -88,7 +88,7 @@ while (playAgain)
         default:
             Console.WriteLine("y/n ONLY.");
             Console.WriteLine("Are we playing again? (y/n)");
-            odpowiedz = Console.ReadLine();
+            answer = Console.ReadLine();
             continue;
     }
 
